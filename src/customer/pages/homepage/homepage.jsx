@@ -1,12 +1,17 @@
 import React from "react";
 import MainCarosel from "../../component/homeCarosel/mainCarosel"; // Update the path accordingly
+import HomeSectionCarosel from "../../component/homeSectionCarosel/homeSectionCarosel";
 
 const HomePage = () =>{
     return(
     <div>
         <MainCarosel/>
-        <div>
-            other section
+        <div className="space-y-10 py-20 flex flex-col justify-center px-5 lg:px-10">
+           <HomeSectionCarosel/>
+           <HomeSectionCarosel/>
+           <HomeSectionCarosel/>
+           <HomeSectionCarosel/>
+           <HomeSectionCarosel/>
         </div>
     </div>
     )
