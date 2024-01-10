@@ -3,9 +3,8 @@ import AliceCarousel from "react-alice-carousel";
 import HomeSectionCard from "../homeSectionCard/homeSectionCard";
 import { Button } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import { mens_kurta } from "../../../data/mens_kurta";
 
-const HomeSectionCarosel = () => {
+const HomeSectionCarosel = ({data , sectionName}) => {
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,12 +30,13 @@ const HomeSectionCarosel = () => {
     }
   };
 
-  const items = mens_kurta
+  const items = data
     .slice(0, 10)
     .map((item, index) => <HomeSectionCard key={index} product={item} />);
 
   return (
-    <div className="px-4 lg:px-8 border">
+    <div className="border">
+      <h2 className="text-2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
       <div className="relative p-5">
         <AliceCarousel
           ref={carouselRef}
@@ -65,7 +65,7 @@ const HomeSectionCarosel = () => {
             />
           </Button>
         )}
-        {currentIndex !== items.length - 1 && (
+        {currentIndex !== items.length - 5 && (
           <Button
             variant="contained"
             className="z-50 bg-white"
