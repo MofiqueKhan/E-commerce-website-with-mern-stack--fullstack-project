@@ -9,6 +9,7 @@ import {
 import { navigation } from "./navigationData";
 import { deepPurple, red } from "@mui/material/colors";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -16,6 +17,7 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const [openAuthModel, setOpenAuthModel] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -38,7 +40,7 @@ export default function Navigation() {
   };
 
   const handleCategoryClick = (category, section, item, close) => {
-    // navigate(`/${category.id}/${section.id}/${item.id}`);
+    navigate(`/${category.id}/${section.id}/${item.id}`);
     close();
   };
 
@@ -405,7 +407,7 @@ export default function Navigation() {
                           Profile
                         </MenuItem>
 
-                        <MenuItem>My Order</MenuItem>
+                        <MenuItem onClick={()=> navigate("/account/order")}>My Order</MenuItem>
 
                         <MenuItem>Logout</MenuItem>
                       </Menu>
