@@ -332,20 +332,20 @@ export default function Navigation() {
                                                     handleCategoryClick(
                                                       category,
                                                       section,
-                                                      close,
-                                                      item
+                                                      item,
+                                                      close
                                                     )
                                                   }
                                                   className="cursor-pointer hover:text-gray-800"
                                                 >
                                                   {item.name}
                                                 </p>
-                                                <a
+                                                {/* <a
                                                   href={item.href}
                                                   className="hover:text-gray-800"
                                                 >
                                                   {item.name}
-                                                </a>
+                                                </a> */}
                                               </li>
                                             ))}
                                           </ul>
